@@ -1,0 +1,19 @@
+<div>
+    <h1>Currency Rates</h1>
+  
+    <div>
+      <input [(ngModel)]="currencyCode" placeholder="Currency Code" />
+      <input [(ngModel)]="rate" type="number" placeholder="Rate" />
+      <button (click)="addOrUpdateCurrency()">Add/Update Currency</button>
+    </div>
+  
+    <ul>
+      <li *ngFor="let rate of rates">
+        {{ rate.currency }}: {{ rate.rate }}
+        <button (click)="deleteCurrency(rate.currency)">Delete</button>
+      </li>
+    </ul>
+  
+    <button (click)="loadRates()">Refresh Rates</button>
+  </div>
+      
